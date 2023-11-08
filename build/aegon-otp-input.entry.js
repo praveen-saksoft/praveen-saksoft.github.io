@@ -1,5 +1,5 @@
-import { r as registerInstance, f as createEvent, h } from './index-8e01e03f.js';
-import { i as isInvalidOTPInput, a as isDeleteContentKey } from './utils-fe9e10d1.js';
+import { r as registerInstance, f as createEvent, h } from './index-b6b593ed.js';
+import { i as isInvalidOTPInput, a as isDeleteContentKey } from './utils-6d6c54db.js';
 
 const aegonOtpInputCss = ":root{--main-border-color:#0069b4;--notissue-border-color:#e85a55;--primary-border-color:#6191a7;--secondary-border-color:#d7eeff;--white-back-color:#fff;--main-back-color:#3395d3;--stopper-height:4px;--stopper-width:4px}.otp-container{min-height:40px;box-sizing:border-box}.otp__input{height:40px;width:34px;border-radius:3px;border:solid 1px #cbcbcb;line-height:24px;margin:0 6px;font-size:19px;outline:0;color:transparent;text-shadow:0 0 0 #2c3c62;text-align:center;box-sizing:content-box;caret-color:#404040}.otp__input::placeholder,.otp__input::-webkit-input-placeholder{color:#1a1a1a;font-size:30px}.otp__input::-moz-placeholder{color:#1a1a1a;font-size:20px}.otp__input:disabled{background:none;color:#1a1a1a;-webkit-text-fill-color:#1a1a1a;opacity:1}.otp__input:placeholder-shown{margin-bottom:0}.otp__input.focused::placeholder,.otp__input:focus{border:solid 1px #0069b4;border-radius:4px}.otp__input::selection{background:none}";
 

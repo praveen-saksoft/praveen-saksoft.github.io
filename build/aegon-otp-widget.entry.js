@@ -1,5 +1,5 @@
-import { r as registerInstance, f as createEvent, h } from './index-8e01e03f.js';
-import { e as errorMessages, L as LOGIN_ERROR_CODES } from './errorMessages-6d62c4f3.js';
+import { r as registerInstance, f as createEvent, h } from './index-b6b593ed.js';
+import { e as errorMessages, L as LOGIN_ERROR_CODES } from './errorMessages-fcc90630.js';
 
 const aegonOtpWidgetCss = ":root{--main-border-color:#0069b4;--notissue-border-color:#e85a55;--primary-border-color:#6191a7;--secondary-border-color:#d7eeff;--white-back-color:#fff;--main-back-color:#3395d3;--stopper-height:4px;--stopper-width:4px}.otp__title{text-align:center;font-size:1.3636363636rem;line-height:23px;padding:0 40px}.otp__input-container{min-height:90px;display:flex;justify-content:center;flex-direction:column;align-items:center;margin-top:24px;font-family:sans-serif}.otp__input-intent{padding:0 40px;margin-bottom:20px;display:flex;flex-direction:column;text-align:center}.otp__input-intent-title{margin:0 0 12px}.otp__input-intent-subtitle{font-size:0.7272727273rem;text-align:center}.otp__input__error-message{text-align:center;margin-top:8px;color:#ff5252;font-size:0.7272727273rem}.otp__timer{text-align:center;margin:16px 0;font-family:sans-serif;font-size:0.7272727273rem}.otp__resend a{text-decoration:none}";
 
@@ -19,6 +19,7 @@ const AegonOtpWidget = class {
     this.time = undefined;
     this.maskedMobileNo = 'XXXXXX9999';
     this.isDisabled = false;
+    this.otpMessage = '';
   }
   /**
    * OTP complete listener
@@ -84,7 +85,7 @@ const AegonOtpWidget = class {
    * Render
    */
   render() {
-    return (h("div", { class: "otp-form-wrapper" }, h("form", { onSubmit: (e) => { e.preventDefault(), this.submitOtpHandler(); } }, h("div", { class: "otp__input-container" }, h("div", { class: "otp__input-intent" }, h("h4", { class: "otp__input-intent-title" }, "Let's verify your phone number"), h("span", { class: "otp__input-intent-subtitle" }, "Please enter the verification code we sent you on ", this.maskedMobileNo)), h("aegon-otp-input", { "otp-length": "6", "auto-focus-first": "true" }), this.errorMessage &&
+    return (h("div", { class: "otp-form-wrapper" }, h("form", { onSubmit: (e) => { e.preventDefault(), this.submitOtpHandler(); } }, h("div", { class: "otp__input-container" }, h("div", { class: "otp__input-intent" }, h("h4", { class: "otp__input-intent-title" }, "Let's verify your phone number"), h("span", { class: "otp__input-intent-subtitle" }, this.otpMessage || `Please enter the verification code we sent you on ${this.maskedMobileNo}`)), h("aegon-otp-input", { "otp-length": "6", "auto-focus-first": "true" }), this.errorMessage &&
       h("p", { class: "otp__input__error-message" }, this.errorMessage()), h("aegon-button", { type: "submit", class: "otp__button", "is-loading": this.showLoader, disabled: this.isDisabled, label: this.label }), !this.userBlocked &&
       h("div", { class: "otp__timer" }, this.showResendOTP
         ? h("span", { class: "otp__resend" }, "Didn't get the code yet? ", h("a", { href: "#", onClick: (e) => this.handleResendOtp(e) }, "Resend"))

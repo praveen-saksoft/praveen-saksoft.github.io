@@ -1,4 +1,4 @@
-import { r as registerInstance, f as createEvent, h, F as Fragment } from './index-8e01e03f.js';
+import { r as registerInstance, f as createEvent, h, F as Fragment } from './index-b6b593ed.js';
 
 const AegonTimer = class {
   constructor(hostRef) {

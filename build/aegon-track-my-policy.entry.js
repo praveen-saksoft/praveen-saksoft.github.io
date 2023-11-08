@@ -1,4 +1,4 @@
-import { r as registerInstance, f as createEvent, h, e as Host } from './index-8e01e03f.js';
+import { r as registerInstance, f as createEvent, h, e as Host } from './index-b6b593ed.js';
 
 const SVG = {
   EXPAND: 'data:image/svg+xml;base64,PHN2ZyBkYXRhLXYtOGI5YmY0N2E9IiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAyMCAxMSIgY2xhc3M9ImFycm93Ij4NCiAgICA8cGF0aCBkYXRhLW5hbWU9IkFycm93IERvd24iIGQ9Ik0xMC45NTQgMTAuNjIyTDE5LjQ3IDIuNmExLjQ4MSAxLjQ4MSAwIDAwLjUtMS40MTkgMS40NDUgMS40NDUgMCAwMC0uOTg5LTEuMTE3IDEuMzkzIDEuMzkzIDAgMDAtMS40MjIuMzgyTDEwIDcuNTY3IDIuNDM3LjQ0MkExLjM5MyAxLjM5MyAwIDAwMS4wMTUuMDZhMS40NDUgMS40NDUgMCAwMC0uOTg4IDEuMTE3QTEuNDgxIDEuNDgxIDAgMDAuNTMgMi42bDguNTE2IDguMDIyYTEuMzkxIDEuMzkxIDAgMDAxLjkwNyAweiIgZmlsbD0idmFyKC0tY29sb3IsIzQxNGI1ZikiPjwvcGF0aD4NCjwvc3ZnPg==',
@@ -137,7 +137,6 @@ const AegonTrackMyPolicy = class {
    * Click Event Handler after onclick of task
    */
   taskClickHandler(tasks) {
-    console.log("task: " + tasks.taskName, tasks);
     this.eventLog.emit(tasks);
   }
   toggleWidget() {

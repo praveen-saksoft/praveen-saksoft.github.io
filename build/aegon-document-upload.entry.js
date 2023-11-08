@@ -1,4 +1,4 @@
-import { r as registerInstance, f as createEvent, h } from './index-8e01e03f.js';
+import { r as registerInstance, f as createEvent, h } from './index-b6b593ed.js';
 
 'use strict';
 
@@ -1362,10 +1362,10 @@ const _requested = {
 const _requiredBy = [
 	"/@aegon/aegon-common-widgets"
 ];
-const _resolved = "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz";
+const _resolved = "http://13.126.211.92:8081/repository/npm-virtual/axios/-/axios-0.21.4.tgz";
 const _shasum = "c67b90dc0568e5c1cf2b0b858c43ba28e2eda575";
 const _spec = "axios@^0.21.1";
-const _where = "/Users/praveen/Documents/Work/Repos/widgets/aegon-video-widget/packages";
+const _where = "D:\\AegonLife\\UI\\widgets\\aegon-video-widget\\node_modules\\@aegon\\aegon-common-widgets";
 const author = {
 	name: "Matt Zabriskie"
 };
@@ -1936,10 +1936,10 @@ const getAPIRequestInterceptor = () => {
   var _a;
   return (_a = config === null || config === void 0 ? void 0 : config.apiRequestInterceptorFunc) !== null && _a !== void 0 ? _a : defaultWidgetConfig.apiRequestInterceptor;
 };
-const getUploadApiHeaders = () => (Object.assign(Object.assign(Object.assign(Object.assign({}, ((config === null || config === void 0 ? void 0 : config.auth) ? { 'Authorization': config.auth } : {})), ((config === null || config === void 0 ? void 0 : config.xApiKey) ? { 'X-API-KEY': config.xApiKey } : {})), ((config === null || config === void 0 ? void 0 : config.xDsDocId) ? { 'X-DS-DOC-ID': config.xDsDocId } : {})), ((config === null || config === void 0 ? void 0 : config.xDsDocPolicy) ? { 'X-DS-DOCPOLICY': config.xDsDocPolicy } : {})));
+const getUploadApiHeaders = () => (Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, ((config === null || config === void 0 ? void 0 : config.auth) ? { 'Authorization': config.auth } : {})), ((config === null || config === void 0 ? void 0 : config.xApiKey) ? { 'X-API-KEY': config.xApiKey } : {})), ((config === null || config === void 0 ? void 0 : config.xAegonPno) ? { 'x-aegon-pno': config.xAegonPno } : {})), ((config === null || config === void 0 ? void 0 : config.xDsDocId) ? { 'X-DS-DOC-ID': config.xDsDocId } : {})), ((config === null || config === void 0 ? void 0 : config.xDsDocPolicy) ? { 'X-DS-DOCPOLICY': config.xDsDocPolicy } : {})), ((config === null || config === void 0 ? void 0 : config.xDsDocPath) ? { 'X-DS-DOC-PATH': config.xDsDocPath } : {})), ((config === null || config === void 0 ? void 0 : config.xDsBucketName) ? { 'X-DS-BUCKET-NAME': config.xDsBucketName } : {})));
 const getMergeApiHeaders = () => {
   var _a, _b;
-  return (Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, ((config === null || config === void 0 ? void 0 : config.auth) ? { 'Authorization': config.auth } : {})), ((config === null || config === void 0 ? void 0 : config.xApiKey) ? { 'X-API-KEY': config.xApiKey } : {})), ((config === null || config === void 0 ? void 0 : config.appendDocId) ? { 'X-DS-DOC-ID': config.appendDocId } : {})), (((config === null || config === void 0 ? void 0 : config.mergeDocPolicy) || (config === null || config === void 0 ? void 0 : config.xDsDocPolicy))
+  return (Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, ((config === null || config === void 0 ? void 0 : config.auth) ? { 'Authorization': config.auth } : {})), ((config === null || config === void 0 ? void 0 : config.xApiKey) ? { 'X-API-KEY': config.xApiKey } : {})), ((config === null || config === void 0 ? void 0 : config.appendDocId) ? { 'X-DS-DOC-ID': config.appendDocId } : {})), ((config === null || config === void 0 ? void 0 : config.xAegonPno) ? { 'x-aegon-pno': config.xAegonPno } : {})), (((config === null || config === void 0 ? void 0 : config.mergeDocPolicy) || (config === null || config === void 0 ? void 0 : config.xDsDocPolicy))
     ? { 'X-DS-DOCPOLICY': (_a = config.mergeDocPolicy) !== null && _a !== void 0 ? _a : config.xDsDocPolicy } : {})), (((config === null || config === void 0 ? void 0 : config.mergeSrcDocPolicy) || (config === null || config === void 0 ? void 0 : config.xDsDocPolicy))
     ? { 'X-DS-SRC-DOCPOLICY': (_b = config.mergeSrcDocPolicy) !== null && _b !== void 0 ? _b : config.xDsDocPolicy } : {})));
 };

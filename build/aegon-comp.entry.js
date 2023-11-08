@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-8e01e03f.js';
+import { r as registerInstance, h } from './index-b6b593ed.js';
 
 const AegonComp = class {
   constructor(hostRef) {
