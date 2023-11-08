@@ -1,5 +1,5 @@
 import { r as registerInstance, f as createEvent, h } from './index-b6b593ed.js';
-import { u as uploadFile, s as setApiConfig, j as getDataUrl, P as PLAY_BUTTON_TIP, k as RETAKE_BUTTON_TIP } from './index-8be09060.js';
+import { u as uploadFile, s as setApiConfig, j as getDataUrl, P as PLAY_BUTTON_TIP, k as RETAKE_BUTTON_TIP } from './index-9a32ddeb.js';
 import { r as readyToTranslate } from './readyToTranslate-7d3b84bc.js';
 import './tslib.es6-4451ae6b.js';
 
