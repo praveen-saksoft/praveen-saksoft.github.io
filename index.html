@@ -4,7 +4,7 @@
     }</style> </head> <body> <!-- <aegon-video-selfie-intro></aegon-video-selfie-intro> --> <!-- <aegon-video-selfie-recording></aegon-video-selfie-recording> --> <!-- <aegon-video-selfie-submit></aegon-video-selfie-submit> --> <aegon-selfie-upload></aegon-selfie-upload> <script>
     let selfieUpload = document.querySelector("aegon-selfie-upload");
     selfieUpload.faceApiConfig = {
-      modelsPath: "http://localhost:3333/assets/face-api-models"
+      modelsPath: window.location.origin + "/assets/face-api-models"
     }
   </script> <script>
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
