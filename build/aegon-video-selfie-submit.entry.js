@@ -1,6 +1,6 @@
 import { r as registerInstance, f as createEvent, h } from './index-a5cee193.js';
-import { s as EUploadErrors, m as GA_MESSAGE, P as PLAY_BUTTON_TIP, t as RETAKE_BUTTON_TIP, r as readyToTranslate } from './index-a1654354.js';
-import { u as uploadFile, t as triggerGAEvent, s as setApiConfig, j as getDataUrl } from './index-21696a33.js';
+import { q as EUploadErrors, m as GA_MESSAGE, P as PLAY_BUTTON_TIP, s as RETAKE_BUTTON_TIP, r as readyToTranslate } from './index-500f3020.js';
+import { u as uploadFile, t as triggerGAEvent, s as setApiConfig, j as getDataUrl } from './index-2b0fcb00.js';
 
 const playButtonIconSvg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNy44MDQgMTcuODA0Ij4NCiAgPHBhdGggZD0iTTIuMDY3LjA0M2EuNC40IDAgMCAxIC40MjYuMDQybDEzLjMxMiA4LjUwM2EuNDEuNDEgMCAwIDEgLjE1NC4zMTNjMCAuMTItLjA2MS4yMzctLjE1NC4zMTRMMi40OTIgMTcuNzE3Yy0uMDcuMDU3LS4xNjIuMDg3LS4yNS4wODdsLS4xNzYtLjA0YS40LjQgMCAwIDEtLjIyMi0uMzYxVi40MDJjMC0uMTUyLjA4Ni0uMjk1LjIyMy0uMzU5eiIvPg0KPC9zdmc+DQo=';
 

@@ -1,5 +1,5 @@
 import { e as Build, g as getAssetPath, r as registerInstance, f as createEvent, h } from './index-a5cee193.js';
-import { E as EColors, I as IMAGE_MIME_TYPE, D as DEFAULT_IMAGE_DOC_TYPE, a as DEFAULT_VIDEO_DOC_TYPE, V as VIDEO_MIME_TYPE, G as GA_ERROR_EVENT, b as GA_ERROR_EVENT_LABEL, c as GA_DEFAULT_ERR, p as parseUA, r as readyToTranslate } from './index-a1654354.js';
+import { E as EColors, I as IMAGE_MIME_TYPE, D as DEFAULT_IMAGE_DOC_TYPE, a as DEFAULT_VIDEO_DOC_TYPE, V as VIDEO_MIME_TYPE, G as GA_ERROR_EVENT, b as GA_ERROR_EVENT_LABEL, c as GA_DEFAULT_ERR, U as UAParser, r as readyToTranslate } from './index-500f3020.js';
 
 const drawDetection = (canvasEl, videoEl, { isDefault = false, isDetected = false }) => {
   canvasEl.width = videoEl.offsetWidth;
@@ -99,10 +99,10 @@ const triggerGAEvent = (gaData = {}) => {
   window.dispatchEvent(gaErrorEvent);
 };
 const getDeviceInfo = () => {
-  const ua = navigator.userAgent;
-  const data = parseUA(ua);
-  // const parser = new UAParser();
-  // const data = parser.getResult();
+  // const ua = navigator.userAgent;
+  // const data = parseUA(ua);
+  const parser = new UAParser();
+  const data = parser.getResult();
   console.log({ data });
   return data;
 };
@@ -131,7 +131,7 @@ const AegonVideoSelfieIntro = class {
   }
   translate() { }
   render() {
-    return (h("div", { class: "avw-selfie-intro" }, h("div", { class: "avw-selfie-intro-block-1" }, h("div", { class: "avw-selfie-intro-title" }, this.translations['takeVideoSelfie'] || 'Take a video selfie	'), h("div", { class: "avw-selfie-subtitle" }, this.translations['verifySelfieVideo'] || 'We will record a selfie video to verify your identification.'), h("div", { class: "avw-selfie-subtitle" }, JSON.stringify(getDeviceInfo())), h("div", { class: "avw-selfie-intro-block-1__actions" }, h("div", { class: "selfie-instruction-block" }, h("p", { class: "selfie-instruction-heading" }, this.translations['instruction'] || 'Instructions'), h("div", { class: "selfie-instructions-wrapper" }, h("div", { class: "stepper stepper-vertical" }, h("ol", { class: "stepper_container" }, h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "1"), h("div", { class: "stepper__desc" }, this.translations['removeSpectacles'] || 'Please remove spectacles.')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "2"), h("div", { class: "stepper__desc" }, this.translations['faceLightSource'] || 'Choose a place with ample light and position yourself to face the light source.	')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "3"), h("div", { class: "stepper__desc" }, this.translations['faceCircleTurnsGreen'] || 'Place your face in the middle of the circle and make sure the circle turns green.')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "4"), h("div", { class: "stepper__desc" }, this.translations['stablePlatform'] || 'Place the device on a stable platform to avoid shaking.')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "5"), h("div", { class: "stepper__desc" }, this.translations["faceOccupiesScreen"] || "Make sure your face occupies most of the camera screen and", "\u00A0", h("span", { class: "stepper__desc--bold" }, this.translations["withoutSpeaking"] || "stay still without speaking."))), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "6"), h("div", { class: "stepper__desc" }, this.translations['AllowCameraMic'] || 'Allow camera and mic access.')))))), h("button", { class: "avw-selfie-intro-block-1__actions--button", onClick: this.captureClickHandler }, this.translations['getStarted'] || 'Get Started')))));
+    return (h("div", { class: "avw-selfie-intro" }, h("div", { class: "avw-selfie-intro-block-1" }, h("div", { class: "avw-selfie-intro-title" }, this.translations['takeVideoSelfie'] || 'Take a video selfie	'), h("div", { class: "avw-selfie-subtitle" }, this.translations['verifySelfieVideo'] || 'We will record a selfie video to verify your identification.'), h("div", { class: "avw-selfie-subtitle" }, JSON.stringify(getDeviceInfo(), null, 4)), h("div", { class: "avw-selfie-intro-block-1__actions" }, h("div", { class: "selfie-instruction-block" }, h("p", { class: "selfie-instruction-heading" }, this.translations['instruction'] || 'Instructions'), h("div", { class: "selfie-instructions-wrapper" }, h("div", { class: "stepper stepper-vertical" }, h("ol", { class: "stepper_container" }, h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "1"), h("div", { class: "stepper__desc" }, this.translations['removeSpectacles'] || 'Please remove spectacles.')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "2"), h("div", { class: "stepper__desc" }, this.translations['faceLightSource'] || 'Choose a place with ample light and position yourself to face the light source.	')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "3"), h("div", { class: "stepper__desc" }, this.translations['faceCircleTurnsGreen'] || 'Place your face in the middle of the circle and make sure the circle turns green.')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "4"), h("div", { class: "stepper__desc" }, this.translations['stablePlatform'] || 'Place the device on a stable platform to avoid shaking.')), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "5"), h("div", { class: "stepper__desc" }, this.translations["faceOccupiesScreen"] || "Make sure your face occupies most of the camera screen and", "\u00A0", h("span", { class: "stepper__desc--bold" }, this.translations["withoutSpeaking"] || "stay still without speaking."))), h("li", { class: "stepper__item" }, h("div", { class: "stepper__title" }, "6"), h("div", { class: "stepper__desc" }, this.translations['AllowCameraMic'] || 'Allow camera and mic access.')))))), h("button", { class: "avw-selfie-intro-block-1__actions--button", onClick: this.captureClickHandler }, this.translations['getStarted'] || 'Get Started')))));
   }
   static get assetsDirs() { return ["img"]; }
 };
