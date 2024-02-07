@@ -1,5 +1,5 @@
 import { e as Build, g as getAssetPath, r as registerInstance, f as createEvent, h } from './index-a5cee193.js';
-import { E as EColors, I as IMAGE_MIME_TYPE, D as DEFAULT_IMAGE_DOC_TYPE, a as DEFAULT_VIDEO_DOC_TYPE, V as VIDEO_MIME_TYPE, G as GA_ERROR_EVENT, b as GA_ERROR_EVENT_LABEL, c as GA_DEFAULT_ERR, U as UAParser, r as readyToTranslate } from './index-500f3020.js';
+import { E as EColors, I as IMAGE_MIME_TYPE, D as DEFAULT_IMAGE_DOC_TYPE, a as DEFAULT_VIDEO_DOC_TYPE, V as VIDEO_MIME_TYPE, G as GA_ERROR_EVENT, b as GA_ERROR_EVENT_LABEL, c as GA_DEFAULT_ERR, U as UAParser, r as readyToTranslate } from './index-6df1987f.js';
 
 const drawDetection = (canvasEl, videoEl, { isDefault = false, isDetected = false }) => {
   canvasEl.width = videoEl.offsetWidth;
