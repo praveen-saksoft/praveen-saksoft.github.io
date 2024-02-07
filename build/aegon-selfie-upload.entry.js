@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-b6b593ed.js';
+import { r as registerInstance, h } from './index-a5cee193.js';
 
 const aegonSelfieUploadCss = "";
 

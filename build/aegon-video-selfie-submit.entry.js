@@ -1,7 +1,6 @@
-import { r as registerInstance, f as createEvent, h } from './index-b6b593ed.js';
-import { u as uploadFile, s as setApiConfig, j as getDataUrl, P as PLAY_BUTTON_TIP, k as RETAKE_BUTTON_TIP } from './index-9a32ddeb.js';
-import { r as readyToTranslate } from './readyToTranslate-7d3b84bc.js';
-import './tslib.es6-4451ae6b.js';
+import { r as registerInstance, f as createEvent, h } from './index-a5cee193.js';
+import { s as EUploadErrors, m as GA_MESSAGE, P as PLAY_BUTTON_TIP, t as RETAKE_BUTTON_TIP, r as readyToTranslate } from './index-a1654354.js';
+import { u as uploadFile, t as triggerGAEvent, s as setApiConfig, j as getDataUrl } from './index-e48189fc.js';
 
 const playButtonIconSvg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNy44MDQgMTcuODA0Ij4NCiAgPHBhdGggZD0iTTIuMDY3LjA0M2EuNC40IDAgMCAxIC40MjYuMDQybDEzLjMxMiA4LjUwM2EuNDEuNDEgMCAwIDEgLjE1NC4zMTNjMCAuMTItLjA2MS4yMzctLjE1NC4zMTRMMi40OTIgMTcuNzE3Yy0uMDcuMDU3LS4xNjIuMDg3LS4yNS4wODdsLS4xNzYtLjA0YS40LjQgMCAwIDEtLjIyMi0uMzYxVi40MDJjMC0uMTUyLjA4Ni0uMjk1LjIyMy0uMzU5eiIvPg0KPC9zdmc+DQo=';
 
@@ -43,14 +42,24 @@ const AegonVideoSelfieSubmit = class {
       e.preventDefault();
       this.isUploading = true;
       this.uploading.emit(true);
-      const { data: vData, errMessage: vErr } = await uploadFile(this.videoFile, () => { });
       const { data: iData, errMessage: iErr } = await uploadFile(this.imageFile, () => { });
+      const { data: vData, errMessage: vErr } = await uploadFile(this.videoFile, () => { });
       this.isUploading = false;
       this.uploading.emit(false);
       if (vData && iData) {
-        this.uploadSuccess.emit({ videoRes: vData || null, imageRes: iData || null });
+        this.uploadSuccess.emit({ videoRes: vData, imageRes: iData });
       }
       if (vErr || iErr) {
+        /** trigger GA event */
+        if (vErr) {
+          const gaMessage = `${EUploadErrors.UPLOAD_ERR}: ${GA_MESSAGE.error["VIDE_UPLOAD_ERR"]}`;
+          triggerGAEvent({ errorMessage: gaMessage });
+        }
+        if (iErr) {
+          const gaMessage = `${EUploadErrors.UPLOAD_ERR}: ${GA_MESSAGE.error["IMAGE_UPLOAD_ERR"]}`;
+          triggerGAEvent({ errorMessage: gaMessage });
+        }
+        //
         this.uploadError.emit({ videoErr: vErr || null, imageErr: iErr || null });
       }
     };
@@ -78,8 +87,8 @@ const AegonVideoSelfieSubmit = class {
   }; }
 };
 __decorate([
-  readyToTranslate('common', 'commonTranslations'),
-  readyToTranslate('selfieUpload')
+  readyToTranslate("common", "commonTranslations"),
+  readyToTranslate("selfieUpload")
 ], AegonVideoSelfieSubmit.prototype, "translate", null);
 AegonVideoSelfieSubmit.style = aegonVideoSelfieSubmitCss;
 
