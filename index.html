@@ -1,4 +1,4 @@
-<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Aegon Video Widget</title> <link rel="modulepreload" href="/build/p-63605277.js"><script type="module" src="/build/p-63605277.js" data-stencil data-resources-url="/build/" data-stencil-namespace="aegon-video-widget"></script> <script nomodule="" src="/build/aegon-video-widget.js" data-stencil></script> <style>body {
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Aegon Video Widget</title> <script type="module" src="/build/aegon-video-widget.esm.js" data-stencil></script> <script nomodule="" src="/build/aegon-video-widget.js" data-stencil></script> <style>body {
       margin: 0;
       padding: 0;
     }</style> </head> <body> <!-- <aegon-video-selfie-intro></aegon-video-selfie-intro> --> <!-- <aegon-video-selfie-recording></aegon-video-selfie-recording> --> <!-- <aegon-video-selfie-submit></aegon-video-selfie-submit> --> <aegon-selfie-upload></aegon-selfie-upload> <script>
@@ -6,4 +6,13 @@
     selfieUpload.faceApiConfig = {
       modelsPath: window.location.origin + "/assets/face-api-models"
     }
-  </script> </body></html>
+  </script> <script>
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // auto-unregister service worker during dev mode
+  navigator.serviceWorker.getRegistration().then(function(registration) {
+  if (registration) {
+    registration.unregister().then(function() { location.reload(true) });
+  }
+  });
+}
+</script></body></html>
