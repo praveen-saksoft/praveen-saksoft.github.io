@@ -1,6 +1,6 @@
 import { f as Build, g as getAssetPath, r as registerInstance, e as createEvent, h, F as Fragment } from './index-342d7c7e.js';
 import { r as readyToTranslate } from './readyToTranslate-7d3b84bc.js';
-import { E as EColors, I as IMAGE_MIME_TYPE, D as DEFAULT_IMAGE_DOC_TYPE, a as DEFAULT_VIDEO_DOC_TYPE, V as VIDEO_MIME_TYPE, G as GA_ERROR_EVENT, b as GA_ERROR_EVENT_LABEL, c as GA_DEFAULT_ERR, U as UAParser, r as requestUserMedia, d as checkUserMediaAccess } from './docstore-api-82c68912.js';
+import { E as EColors, I as IMAGE_MIME_TYPE, D as DEFAULT_IMAGE_DOC_TYPE, a as DEFAULT_VIDEO_DOC_TYPE, V as VIDEO_MIME_TYPE, G as GA_ERROR_EVENT, b as GA_ERROR_EVENT_LABEL, c as GA_DEFAULT_ERR, U as UAParser, r as requestUserMedia, d as releaseUserMedia } from './docstore-api-7910b5cd.js';
 
 const drawDetection = (canvasEl, videoEl, { isDefault = false, isDetected = false }) => {
   canvasEl.width = videoEl.offsetWidth;
@@ -158,13 +158,11 @@ const AegonVideoSelfieIntro = class {
       if (result.data) {
         this.hasError = false;
         this.mediaStream = result.data;
-        // releaseUserMedia(this.mediaStream);
       }
       else {
         this.mediaStream = null;
         this.hasError = true;
       }
-      checkUserMediaAccess();
     };
     this.getStartedHandler = async (e) => {
       await this.allowCameraMicHandler(e);
@@ -176,6 +174,9 @@ const AegonVideoSelfieIntro = class {
     this.hasError = false;
   }
   translate() { }
+  disconnectedCallback() {
+    releaseUserMedia(this.mediaStream);
+  }
   render() {
     return (h("div", { class: "avw-selfie-intro" }, h("div", { class: "avw-selfie-intro-block-1" }, h("div", { class: "avw-selfie-intro-title" }, this.translations["takeVideoSelfie"] || "Take a video selfie	"), h("div", { class: "avw-selfie-subtitle" }, this.translations["verifySelfieVideo"] || "We will record a selfie video to verify your identification."), h("div", { class: "avw-selfie-intro-block-1__actions" }, h("div", { class: "selfie-instruction-block" }, h("p", { class: "selfie-instruction-heading" }, this.translations["instruction"] || "Instructions"), h("div", { class: "selfie-instructions-wrapper" }, h("div", { class: "stepper stepper-vertical" }, h("ol", { class: "stepper_container" }, h("li", { class: "stepper__item", "data-step": "1" }, h("div", { class: "stepper__desc" }, this.translations["removeSpectacles"] || "Please remove spectacles.")), h("li", { class: "stepper__item", "data-step": "2" }, h("div", { class: "stepper__desc" }, this.translations["faceLightSource"] ||
       "Choose a place with ample light and position yourself to face the light source.	")), h("li", { class: "stepper__item", "data-step": "3" }, h("div", { class: "stepper__desc" }, this.translations["faceCircleTurnsGreen"] ||
