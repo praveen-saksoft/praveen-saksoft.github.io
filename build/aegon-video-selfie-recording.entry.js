@@ -1,6 +1,6 @@
 import { r as registerInstance, e as createEvent, h, F as Fragment } from './index-342d7c7e.js';
-import { r as requestUserMedia, g as getAudioMeter, e as drawDetection, f as getMediaRecorder, h as createVideoFile, i as createImageFile, j as animateCircleDraw, k as VIDEO_CAPTURE_SCORE_THRESHOLD, l as detectFace, m as IMAGE_CAPTURE_SCORE_THRESHOLD, E as EColors, n as getImagePath, o as loadFaceApiModels, d as releaseUserMedia, R as RECORD_BUTTON_TIP } from './docstore-api-7910b5cd.js';
-import './index-1e548fda.js';
+import { r as requestUserMedia, g as getAudioMeter, e as drawDetection, f as getMediaRecorder, h as createVideoFile, i as createImageFile, j as animateCircleDraw, k as VIDEO_CAPTURE_SCORE_THRESHOLD, l as detectFace, m as IMAGE_CAPTURE_SCORE_THRESHOLD, E as EColors, n as getImagePath, o as loadFaceApiModels, p as releaseUserMedia, R as RECORD_BUTTON_TIP } from './docstore-api-82c68912.js';
+import './index-e5a253c3.js';
 import { r as readyToTranslate } from './readyToTranslate-7d3b84bc.js';
 
 const micIconSvg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIj4NCiAgPHBhdGggZD0iTTMuNSA2LjVBLjUuNSAwIDAgMSA0IDd2MWE0IDQgMCAwIDAgOCAwVjdhLjUuNSAwIDAgMSAxIDB2MWE1IDUgMCAwIDEtNC41IDQuOTc1VjE1aDNhLjUuNSAwIDAgMSAwIDFoLTdhLjUuNSAwIDAgMSAwLTFoM3YtMi4wMjVBNSA1IDAgMCAxIDMgOFY3YS41LjUgMCAwIDEgLjUtLjV6TTEwIDhhMiAyIDAgMSAxLTQgMFYzYTIgMiAwIDEgMSA0IDB2NXpNOCAwYTMgMyAwIDAgMC0zIDN2NWEzIDMgMCAwIDAgNiAwVjNhMyAzIDAgMCAwLTMtM3oiLz4NCjwvc3ZnPg0K';
